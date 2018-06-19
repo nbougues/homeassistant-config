@@ -1,0 +1,124 @@
+binary_sensor.ip_camera_motion:
+  name:
+  platform: hikvision
+  unique_id: c924b979-6324-11b3-819e-c42f90135bff.Motion.1
+media_player.pioneer_vsx831_de8f31:
+  name:
+  platform: cast
+  unique_id: cf68d861-74f9-0298-d32b-d71473a148fe
+media_player.cuisine:
+  name:
+  platform: cast
+  unique_id: 81f3a854-74b4-7c74-cf0c-13602fcc3bba
+media_player.48pus760012:
+  name:
+  platform: cast
+  unique_id: 42f003e0-c661-bca2-0a7b-07a3ecb4907b
+binary_sensor.ip_camera_pir_alarm:
+  name:
+  platform: hikvision
+  unique_id: 3d5a7d90-7ce7-11b2-8079-c056e3f911e3.PIR Alarm.1
+light.lumiere_table_1:
+  name: Table  à manger 1
+  platform: tradfri
+  unique_id: light-7e0c615204400056-65539
+light.lumiere_salon:
+  name: Séjour centre
+  platform: tradfri
+  unique_id: light-7e0c615204400056-65537
+light.lumiere_table_2:
+  name: Table à manger 2
+  platform: tradfri
+  unique_id: light-7e0c615204400056-65540
+light.salon:
+  name:
+  platform: tradfri
+  unique_id: group-7e0c615204400056-163807
+light.table_salon:
+  name: Table séjour
+  platform: tradfri
+  unique_id: group-7e0c615204400056-195742
+media_player.chambre_julien:
+  name:
+  platform: cast
+  unique_id: 08614f6e-ec71-0519-6442-57b710b6e6e6
+media_player.chambre_dalexis:
+  name:
+  platform: cast
+  unique_id: c345f4dd-76c7-90a9-36f7-2734f3825ff6
+media_player.freebox_player_mini:
+  name:
+  platform: cast
+  unique_id: 126fbe91-a527-5612-0d5e-090739a5e669
+sensor.illumination_7811dcb90027:
+  name:
+  platform: xiaomi_aqara
+  unique_id: illumination7811dcb90027
+light.gateway_light_7811dcb90027:
+  name:
+  platform: xiaomi_aqara
+  unique_id: rgb7811dcb90027
+binary_sensor.water_leak_sensor_158d000233320f:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d000233320f
+binary_sensor.door_window_sensor_158d0002059a84:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d0002059a84
+binary_sensor.door_window_sensor_158d000204ba84:
+  name: Fenêtre salon
+  platform: xiaomi_aqara
+  unique_id: status158d000204ba84
+binary_sensor.door_window_sensor_158d000204c165:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d000204c165
+binary_sensor.door_window_sensor_158d000205b0dc:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d000205b0dc
+binary_sensor.door_window_sensor_158d0002049cf4:
+  name: Fenêtre cuisine
+  platform: xiaomi_aqara
+  unique_id: status158d0002049cf4
+binary_sensor.door_window_sensor_158d0002059a9a:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d0002059a9a
+binary_sensor.water_leak_sensor_158d00023aa51b:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d00023aa51b
+binary_sensor.door_window_sensor_158d0002059dac:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d0002059dac
+binary_sensor.door_window_sensor_158d0002059e2a:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d0002059e2a
+binary_sensor.door_window_sensor_158d0002059e27:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d0002059e27
+binary_sensor.door_window_sensor_158d00020471d7:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d00020471d7
+binary_sensor.door_window_sensor_158d000204bab3:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d000204bab3
+sensor.illumination_158d000200cd97:
+  name:
+  platform: xiaomi_aqara
+  unique_id: lux158d000200cd97
+binary_sensor.motion_sensor_158d000200cd97:
+  name: Détecteur escalier combles
+  platform: xiaomi_aqara
+  unique_id: status158d000200cd97
+media_player.chambre_mathieu_2:
+  name:
+  platform: cast
+  unique_id: b67ad2b7-1069-b7a4-fdfb-9feaae648336

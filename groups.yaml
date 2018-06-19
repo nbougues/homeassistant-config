@@ -1,0 +1,86 @@
+default_view:
+    view: yes
+    icon: mdi:home
+    entities:
+        - camera.cam_jardin
+        - camera.cam_salon
+        - sensor.indoor_temperature
+        - sensor.outdoor_temperature
+        - sensor.wind_chill
+        - sensor.light
+#        - group.nous
+        - device_tracker.94652d9204d4
+        - device_tracker.androidb49370e0000f36d8
+        - device_tracker.android711f475f231406a9
+
+media_players:
+    name: Media players
+    view: yes
+    icon: mdi:music
+    entities:
+      - media_player.cuisine
+      - media_player.pioneer_vsx831_de8f31
+
+cameras:
+    name: Cameras
+    icon: mdi:video
+    view: yes
+    entities:
+        - camera.cam_escalier
+        - camera.cam_jardin
+        - camera.cam_salon
+        
+station_meteo:
+  view: yes
+  name: Station Meteo
+  icon: mdi:weather-partlycloudy
+  entities:
+    - sensor.indoor_temperature
+    - sensor.indoor_humidity
+    - sensor.outdoor_temperature
+    - sensor.outdoor_humidity
+    - sensor.wind_chill
+    - sensor.dew_point
+    - sensor.absolute_pressure
+    - sensor.relative_pressure
+    - sensor.light
+    - sensor.uv_index
+    - sensor.wind_speed
+    - sensor.wind_direction
+    - sensor.wind_gust
+    - sensor.rain
+    - sensor.daily_rain
+    - sensor.weekly_rain
+    - sensor.monthly_rain
+    - sensor.yearly_rain
+
+tous:
+    view: yes
+    name: Tous
+    entities:
+        - group.all_devices
+        - group.all_sensors
+        - group.all_cameras
+        - group.all_media_players
+
+nous:
+    view: no
+    entities:
+        - device_tracker.94652d9204d4
+        - device_tracker.androidb49370e0000f36d8
+        - device_tracker.android711f475f231406a9
+
+tesla:
+    view: yes
+    name: Tesla
+    icon: mdi:car-sports
+    entities:
+        - binary_sensor.tesla_model_s_5yjsa7e26hf193020_charger_sensor
+        - binary_sensor.tesla_model_s_5yjsa7e26hf193020_parking_sensor
+        - climate.tesla_model_s_5yjsa7e26hf193020_hvac_climate_system
+        - device_tracker.tesla_model_s_5yjsa7e26hf193020_location_tracker
+        - lock.tesla_model_s_5yjsa7e26hf193020_door_lock
+        - sensor.tesla_model_s_5yjsa7e26hf193020_battery_sensor
+        - sensor.tesla_model_s_5yjsa7e26hf193020_temperature_sensor_inside
+        - sensor.tesla_model_s_5yjsa7e26hf193020_temperature_sensor_outside
+

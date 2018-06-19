@@ -1,0 +1,216 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Acasa
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 121
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Paris
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  api_password: !secret api_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  base_url: https://home.bougues.net
+
+  ip_ban_enabled: True
+  login_attempts_threshold: 10
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+recorder:
+        purge_keep_days: 5
+        purge_interval: 1
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+
+#group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+tesla:
+  username: !secret tesla_username
+  password: !secret tesla_password
+
+camera:
+  - platform: generic
+    still_image_url: http://192.168.0.10:80/Streaming/channels/2/picture
+    name: Cam salon
+    username: admin
+    password: !secret cam_password
+
+  - platform: generic
+    still_image_url: http://192.168.0.7:80/Streaming/channels/2/picture
+    name: Cam drive
+    username: admin
+    password: !secret cam_password
+
+  - platform: generic
+    still_image_url: http://192.168.0.8:80/Streaming/channels/2/picture
+    name: Cam salon
+    username: admin
+    password: !secret cam_password
+
+  - platform: generic
+    still_image_url: http://192.168.0.17:80/Streaming/channels/2/picture
+    name: Cam jardin
+    username: admin
+    password: !secret cam_password
+
+binary_sensor:
+  - platform: hikvision
+    host: 192.168.0.7
+    username: admin
+    password: !secret cam_password
+
+  - platform: hikvision
+    host: 192.168.0.8
+    username: admin
+    password: !secret cam_password
+
+  - platform: hikvision
+    host: 192.168.0.10
+    username: admin
+    password: !secret cam_password
+
+
+sensor:
+
+  # Weather prediction
+  - platform: yr
+    name: "Prévisions"
+    forecast: 24
+    monitored_conditions: 
+        - temperature
+        - symbol
+
+  - platform: teleinfo
+    device: /dev/teleinfo
+
+  - platform: mqtt
+    state_topic: "teleinfo_conso/IINST"
+    name: "Intensité instantanée"
+    unit_of_measurement: A
+    expire_after: 60
+
+  - platform: mqtt
+    state_topic: "teleinfo_conso/PAPP"
+    name: "Puissance apparente"
+    unit_of_measurement: W
+    expire_after: 60
+
+  - platform: mqtt
+    state_topic: "teleinfo_conso/PTEC"
+    name: "Période tarifaire"
+    expire_after: 60
+
+  - platform: ws2000
+    station_id: !secret ws2000_station_id
+    password: !secret ws2000_password
+    forward_to_wunderground: true
+
+device_tracker:
+    - platform: unifi 
+      host: 192.168.0.2
+      username: !secret unifi_username
+      password: !secret unifi_password
+      verify_ssl: False
+
+switch:
+    - platform: broadlink
+      host: 192.168.0.51
+      mac: '34:EA:34:BE:63:C4'
+      friendly_name: "Couverture Nico"
+      type: "sp3"
+
+    - platform: orvibo
+      discovery: true
+      switches:
+          - host: 192.168.0.52
+            name: "Prise TV chambre"
+          - host: 192.168.0.53
+            name: "Prise TV salon"
+          - host: 192.168.0.50
+            name: "Couverture Alex"
+
+mqtt:
+    broker: localhost
+    discovery: true
+    discovery_prefix: homeassistant
+
+xiaomi_aqara:
+        discovery_retry: 5
+        gateways:
+                - key: !secret xiaomi_key
+
+light:
+    - platform: group
+      name: Garage
+      entities:
+          - light.garage_1
+          - light.garage_2
+
+satel_integra:
+    host: 192.168.0.17
+    partition: 1
+    zones:
+      02:
+        name: "Détecteur séjour"
+        type: "motion"
+
+      04:
+        name: "Détecteur escalier"
+        type: "motion"
+
+      25:
+        name: "Détecteur garage"
+        type: "motion"
+
+      113:
+        name: "Porte entrée"
+        type: "opening"

@@ -1,0 +1,24 @@
+- id: '1528678247312'
+  alias: Escalier combles ON sur détection de mouvement
+  trigger:
+  - entity_id: binary_sensor.motion_sensor_158d000200cd97
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: light.escalier_combles
+    service: light.turn_on
+- id: '1528678510421'
+  alias: Escalier combles OFF sur absence de mouvement après 30s
+  trigger:
+  - entity_id: binary_sensor.motion_sensor_158d000200cd97
+    platform: state
+    to: 'off'
+    for:
+      seconds: 30
+  condition: []
+  action:
+  - data:
+      entity_id: light.escalier_combles
+    service: light.turn_off

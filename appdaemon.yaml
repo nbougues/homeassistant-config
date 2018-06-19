@@ -1,0 +1,20 @@
+AppDaemon:
+  logfile: /home/homeassistant/.homeassistant/appdaemon.log
+  errorfile: /home/homeassistant/.homeassistant/appdaemon.err
+  logsize: 100000
+  log_generations: 3
+  threads: 10
+#  cert_path: <path/to/root/CA/cert>
+#  cert_verify: True
+#  time_zone: <time zone>
+  api_port: 5000
+#  api_key: !secret api_key
+#  api_ssl_certificate: <path/to/root/CA/cert>
+#  api_ssl_key: <path/to/root/CA/key>
+  app_dir: /home/homeassistant/.homeassistant/appdaemon
+HASS:
+  ha_url: http://192.168.0.5
+  ha_key: vrzvmr26
+HADashboard:
+  dash_url: http://192.168.0.5:5555
+  dash_dir: /home/homeassistant/.homeassistant/appdaemon/dashboards
